@@ -59,3 +59,11 @@ typings/
 
 # next.js build output
 .next
+
+#nwb ignores
+/coverage
+/demo/dist
+/es
+/lib
+/node_modules
+/umd
