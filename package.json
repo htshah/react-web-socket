@@ -17,14 +17,46 @@
     "start": "nwb serve-react-demo",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "test:watch": "nwb test-react --server",
+    "format": "npm run format:prettier",
+    "format:prettier": "node_modules/.bin/prettier --config .prettierrc \"src/**/*.{ts,css,less,js}\" --write",
+    "lint": "npm run lint:js",
+    "lint:js": "./node_modules/.bin/eslint --fix \"src/**/*.js\" \"src/**/*.jsx\"",
+    "lint:staged": "./node_modules/.bin/eslint --fix",
+    "precommit": "pretty-quick --staged && lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npm run lint:staged",
+      "git add"
+    ],
+    "src/**/*.jsx": [
+      "npm run lint:staged",
+      "git add"
+    ]
   },
   "dependencies": {},
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.13.0",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
     "nwb": "0.23.x",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
