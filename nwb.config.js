@@ -3,5 +3,8 @@ module.exports = {
   npm: {
     esModules: true,
     umd: false
+  },
+  babel: {
+    stage: 3
   }
-}
+};
