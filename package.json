@@ -47,6 +47,11 @@
     "react": "16.x"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/commit-analyzer": "^6.1.1",
+    "@semantic-release/git": "^7.0.12",
+    "@semantic-release/npm": "^5.1.9",
+    "@semantic-release/release-notes-generator": "^7.1.7",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.3.0",
@@ -61,7 +66,8 @@
     "prettier": "^1.17.1",
     "pretty-quick": "^1.11.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "semantic-release": "^15.13.14"
   },
   "author": "Het Shah<htshah60@gmail.com>",
   "homepage": "https://github.com/htshah",
