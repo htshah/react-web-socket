@@ -1,15 +1,27 @@
-import React, {Component} from 'react'
-import {render} from 'react-dom'
+import React, { useState } from 'react';
+import { render } from 'react-dom';
 
-import Example from '../../src'
+import WebSocket from '../../src';
 
-class Demo extends Component {
-  render() {
-    return <div>
+const local = false;
+const Demo = () => {
+  const [counter, setcounter] = useState(0);
+  return (
+    <div>
       <h1>react-web-socket Demo</h1>
-      <Example/>
+      <WebSocket
+        url={local ? 'ws://localhost:3005' : 'wss://echo.websocket.org'}
+        debug
+        onMessage={(data) => {
+          console.log(data);
+        }}
+        timeout={3000}
+      />
+      <button onClick={() => setcounter(counter + 1)}>
+        Clicked {counter} times
+      </button>
     </div>
-  }
-}
+  );
+};
 
-render(<Demo/>, document.querySelector('#demo'))
+render(<Demo />, document.querySelector('#demo'));
