@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { render } from 'react-dom';
 
 import WebSocket from '../../src';
@@ -10,6 +11,7 @@ const Demo = () => {
     <div>
       <h1>react-web-socket Demo</h1>
       <WebSocket
+        sendMessage={`Hello world from declarative api ${counter} times`}
         url={local ? 'ws://localhost:3005' : 'wss://echo.websocket.org'}
         debug
         onMessage={(data) => {
@@ -17,8 +19,8 @@ const Demo = () => {
         }}
         timeout={3000}
       />
-      <button onClick={() => setcounter(counter + 1)}>
-        Clicked {counter} times
+      <button type='button' onClick={() => setcounter(counter + 1)}>
+        {`Clicked ${counter} times`}
       </button>
     </div>
   );
