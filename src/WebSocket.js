@@ -143,14 +143,14 @@ const WebSocket = ({
 
 WebSocket.defaultProps = {
   shouldReConnect: true,
-  attempts: 0,
+  attempts: 5,
   onOpen: () => {},
   onError: () => {},
   onClose: () => {},
   debug: false,
   timeout: 3000,
   socketInstance: () => {},
-  sendMessage: ''
+  sendMessage: null
 };
 
 WebSocket.propTypes = {
