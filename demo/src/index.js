@@ -11,12 +11,12 @@ const Demo = () => {
     <div>
       <h1>react-web-socket Demo</h1>
       <WebSocket
-        sendMessage={`Hello world from declarative api ${counter} times`}
         url={local ? 'ws://localhost:3005' : 'wss://echo.websocket.org'}
-        debug
         onMessage={(data) => {
           console.log(data);
         }}
+        debug
+        sendMessage={`Hello world from declarative api ${counter} times`}
         timeout={3000}
       />
       <button type='button' onClick={() => setcounter(counter + 1)}>
